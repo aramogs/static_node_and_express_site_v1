@@ -1,0 +1,70 @@
+{
+    "data": {
+        "projects": [
+            {
+                "id": 0,
+                "project_name": "Random Quote Generator",
+                "description": "Program that randomly generates a quote every determined time",
+                "technologies": ["JavaScript", "HTML", "CSS"],
+                "live_link": "https://aramogs.github.io/random_quote_generator/",
+                "github_link": "https://github.com/aramogs/random_quote_generator",
+                "image_urls": ["../images/project1_1.jpg", "../images/project1_2.jpg", "../images/project1_3.jpg"]
+            },
+            {
+                "id": 1,
+                "project_name": "List Pagination and Filtering",
+                "description": "Page that creates a pagination, out of a list of people allowing the page to look and feel better, also with a quick search input to make it easier to find someone",
+                "technologies": ["JavaScript", "HTML", "CSS"],
+                "live_link": "https://aramogs.github.io/list_pagination_and_filtering/",
+                "github_link": "https://github.com/aramogs/list_pagination_and_filtering",
+                "image_urls": ["../images/project2_1.jpg", "../images/project2_2.jpg"]
+            },
+            {
+                "id": 2,
+                "project_name": "Interactive Form",
+                "description": "An interactive form, created with Javascript and Jquery",
+                "technologies": ["JavaScript", "jQuery", "HTML", "CSS"],
+                "live_link": "https://aramogs.github.io/interactive-form/",
+                "github_link": "https://github.com/aramogs/interactive-form",
+                "image_urls": ["../images/project3_1.jpg", "../images/project3_2.jpg", "../images/project3_3.jpg"]
+            },
+            {
+                "id": 3,
+                "project_name": "Word guessing game: Phrase Hunter",
+                "description": "An interactive game, allowing the user to guess the correct word",
+                "technologies": ["JavaScript", "jQuery", "HTML", "CSS"],
+                "live_link": "https://aramogs.github.io/oop_game-v2/",
+                "github_link": "https://github.com/aramogs/oop_game-v2",
+                "image_urls": ["../images/project4_1.jpg", "../images/project4_2.jpg", "../images/project4_3.jpg", "../images/project4_4.jpg"]
+            },
+            {
+                "id": 4,
+                "project_name": "Public API Requests",
+                "description": "Program capable of doing API requests to other websource using Ajax",
+                "technologies": ["JavaScript", "jQuery", "AJAX", "HTML", "CSS"],
+                "live_link": "https://aramogs.github.io/public_api_request/",
+                "github_link": "https://github.com/aramogs/public_api_request",
+                "image_urls": ["../images/project5_1.jpg", "../images/project5_2.jpg", "../images/project5_3.jpg"]
+            }
+        ],
+        "info": [
+            {
+                "name": "Aram G",
+                "title": "Full Stack Javascript Student",
+                "portfolio": "I have experience in IT service for more than 4 years, and worked in IT support most of my career. Am always trying to learn new technologies now including web programming",
+                "skills": ["Javascript","HTML","CSS","NodeJs","MySQL","Bootstrap","Etc.."],
+                "contactinfo": {
+                        "phone":"(555)-555-555-1234",
+                        "email":"aramogs@gmail.com" 
+                    },
+                "pages":{
+                    "linkedIn": "https://mx.linkedin.com/in/aramgs",
+                    "github": "https://github.com/aramogs"
+                }
+
+            }
+        ]
+
+    }
+    
+}

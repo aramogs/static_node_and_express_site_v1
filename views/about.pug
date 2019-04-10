@@ -1,0 +1,30 @@
+extends layout.pug
+
+block content 
+  nav.grid-container.portfolio-breadcrumb
+    a(href='/') ← Back
+  article.grid-container.portfolio-intro.portfolio-project
+    .grid-x
+      .cell.small-6.medium-9.large-9
+        h1=`${usrName}`
+        p.lead.text-light
+          | Full Stack JavaScript Developer.
+        .portfolio-bio
+          p=`${usrPortfolio}`
+        p Currently working at:
+        img.center(src='http://www.tristone.com/Media/1003/tristone_logo_head.png')
+      .cell.portfolio-meta.small-6.medium-2.large-3
+        h6 Skills
+        ul
+        each skill in usrSkills
+          li= skill
+        h6 Contact Info
+        ul
+          li=`${usrContact.phone}`
+          li=`${usrContact.email}`
+        a.button.expanded(href=`${usrPages.linkedIn}`) LinkedIn
+        a.button.expanded(href=`${usrPages.github}`) GitHub
+        //a.button.expanded(href='') Twitter
+  nav.grid-container.portfolio-breadcrumb
+    a(href='/') ← Back
+  
