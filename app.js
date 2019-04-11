@@ -1,4 +1,4 @@
-//requiring dependencies
+//Dependencies
 const express = require('express');
 const { data } = require('./data.json');
 const { projects } = data;
@@ -6,15 +6,19 @@ const { projects } = data;
 
 const app = express();
 
-//serving the static files
+//Static Files
 app.use('/static', express.static('public'));
 app.use('/images', express.static('images'));
 
-//setting the view engine to pug
+//View Engine
 app.set('view engine', 'pug');
 
+//Server Port
+app.listen(3000, () => {
+  console.log('The app is running!');
+});
 
-//route to index.pug
+//Routes /
 app.get('/', (req, res) => {
 
   const projs = [];
@@ -28,8 +32,7 @@ app.get('/', (req, res) => {
   res.render('index', templateData);
 });
 
-
-//route to about.pug
+//Routes /about
 app.get('/about', (req, res) => {
   const usrName = data.info[0].name;
   const usrSkills = data.info[0].skills;
@@ -41,17 +44,10 @@ app.get('/about', (req, res) => {
   res.render('about',templateData);
 });
 
-
-//redirecting to the first project in case of the id of the project is missing in the url
-app.get('/project', (req, res) => {
-  res.redirect('/project/0');
-});
-
-//route to project.pug
+//Routes /project/:id
 app.get('/project/:id', (req, res, next) => {
 
   const id = req.params.id;
-
   //if the id in the url is correct (between 0 and the number of projects), rendering the project page, serving the needed data from data.json
   if (id >= 0 && id <= projects.length) {
     const projId = projects[id].id;
@@ -66,31 +62,27 @@ app.get('/project/:id', (req, res, next) => {
 
     res.render('project', templateData);
   } else {
-    //if the id in the url is uncorrect, rendering the error page
     const err = new Error("This project doesn't exist (yet)!");
     err.status = 404;
     next(err);
   }
 });
 
+//Redirect to /project/0
+app.get('/project', (req, res) => {
+  res.redirect('/project/0');
+});
 
-//setting an error in case of an uncorrect url
+//Error If Missing Page
 app.use((req, res, next) => {
   const err = new Error("OOPS We could find this page :(");
   err.status = 404;
   next(err);
 });
 
-
-//rendering an error page in case of an uncorrect url
+//Error sends information to error.pug
 app.use((err, req, res, next) => {
   res.locals.error = err;
   res.status(err.status);
   res.render('error');
-});
-
-
-//listening to port 3000
-app.listen(3000, () => {
-  console.log('The app is running!');
 });
